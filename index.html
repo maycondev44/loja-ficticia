@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loja Fictícia</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Loja Fictícia</h1>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <h2>Promoção Especial</h2>
+      <p>Descontos incríveis em todos os eletrônicos!</p>
+    </section>
+
+    <section id="produtos" class="produtos">
+      <h2>Produtos em destaque</h2>
+      <div class="grid">
+        <article class="produto">
+          <img src="https://www.logitechstore.com.br/media/catalog/product/cache/105e6f420716e0751863c4b81f527d17/a/5/a50x.png" alt="Produto 1">
+          <h3>Headphone Gamer</h3>
+          <p>R$ 2.464,90</p>
+          <button class="favoritar">❤️ Favoritar</button>
+        </article>
+        <article class="produto">
+          <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRS1fBkWBfD9ShWPm2gb9YNLWQVnE4sW-NMtX6VVhYPwkVOhMAjfSTrq5qLbzOPU8r4o3cW7OKLjL3Dqdrb6_Mi-zgeUVLB365uzib-XHFgStgUns2O0M1Ks1r9GUANZahdGTysgw&usqp=CAc" alt="Produto 2">
+          <h3>Notebook Dell</h3>
+          <p>R$ 3.149,10</p>
+          <button class="favoritar">❤️ Favoritar</button>
+        </article>
+        <article class="produto">
+          <img src="data:image/jpeg;base64,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" alt="Produto 3">
+          <h3>Smartphone Samsung S25 Ultra</h3>
+          <p>R$ 8.049,00</p>
+          <button class="favoritar">❤️ Favoritar</button>
+        </article>
+      </div>
+    </section>
+  </main>
+    <section id="contato" class="contato">
+    <h2>Fale Conosco</h2>
+      <p>Email: contato@lojaficticia.com</p>
+      <p>WhatsApp: (11) 99999-0000</p>
+    </section>
+
+  <footer>
+    <p>&copy; 2025 Loja Fictícia. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
