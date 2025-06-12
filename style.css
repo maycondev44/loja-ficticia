@@ -54,10 +54,6 @@ nav a {
 .produto img {
   width: 100%;
   height: auto;
-<<<<<<< HEAD
-  border-radius: 8px;
-=======
->>>>>>> 4f932c44c5587e803312ca1126ec8a282f9451be
 }
 
 button.favoritar {
@@ -77,7 +73,6 @@ footer {
   padding: 1rem;
   margin-top: 2rem;
 }
-<<<<<<< HEAD
 
 .contato {
   padding: 2rem;
