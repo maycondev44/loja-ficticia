@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <!-- Meta viewport corrigido para prevenir zoom indesejado -->
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Loja Fictícia</title>
   <link rel="stylesheet" href="style.css" />
@@ -142,7 +142,7 @@
       }
     }
     
-    /* ESTILOS EXISTENTES PRESERVADOS */
+    
     .hero {
       text-align: center;
       padding: 2rem 0;
@@ -179,9 +179,9 @@
   </header>
 
   <main>
-   <section id="inicio" class="hero">
-  <h2>Promoção Especial</h2>
-  <p>Descontos incríveis em todos os eletrônicos!</p>
+   <section id="promocao" class="banner-promocional">
+  <h2 class="titulo-promocao">Promoção Especial</h2>
+  <p class="texto-promocao">Descontos incríveis em todos os eletrônicos!</p>
 </section>
 
     <section id="produtos" class="produtos">
@@ -223,7 +223,7 @@
   </footer>
 
   <script>
-    // Adicione este código ao seu JS existente
+    
     document.querySelector('.menu-toggle').addEventListener('click', function() {
       document.querySelector('nav ul').classList.toggle('active');
     });
@@ -240,7 +240,7 @@
       }
     });
 
-    // SEU CÓDIGO JS EXISTENTE (mantido igual)
+    
     const produtos = [
       { id: 1, nome: "HeadSet Gamer Hyperx Cloud Alpha", preco: 810.00, imagem: "https://m.media-amazon.com/images/I/51TOPwdGwOL._AC_UF350,350_QL50_.jpg" },
       { id: 2, nome: "Lâmpada Inteligente Positivo Hue", preco: 42.90, imagem: "https://positivocasainteligente.vteximg.com.br/arquivos/ids/156931-400-400/SmartLampadaSpot_caixa.png?v=638035941105400000" },
