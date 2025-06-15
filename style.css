@@ -27,11 +27,7 @@ nav a {
   text-decoration: none;
 }
 
-.hero {
-  padding: 2rem;
-  background: #ffc107;
-  text-align: center;
-}
+
 
 .produtos {
   padding: 2rem;
@@ -105,7 +101,7 @@ footer {
 
 /* ESTILOS DA SEÇÃO PROMOCIONAL */
 .hero {
-  background-color: #ffd900;  /* Amarelo ouro */
+  background-color: #ffda0a;  /* Amarelo ouro */
   padding: 2rem;
   text-align: center;
   border-radius: 8px;
