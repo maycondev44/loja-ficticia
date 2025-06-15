@@ -112,7 +112,7 @@ footer {
   margin: 1rem 0;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra sutil */
   
-  /* Efeito gradiente opcional (descomente se quiser) */
+  /* Efeito gradiente opcional/
   /* background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); */
 }
 
