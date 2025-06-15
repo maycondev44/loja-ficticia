@@ -102,4 +102,48 @@ footer {
     color: #666;
     margin-top: 10px;
   }
-</style>
+
+/* ESTILOS DA SEÇÃO PROMOCIONAL */
+.hero {
+  background-color: #FFD700;  /* Amarelo ouro */
+  padding: 2rem;
+  text-align: center;
+  border-radius: 8px;
+  margin: 1rem 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra sutil */
+  
+  /* Efeito gradiente opcional (descomente se quiser) */
+  /* background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); */
+}
+
+.hero h2 {
+  color: #333; /* Cor escura para contraste */
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 1.5rem;
+    margin: 0.5rem 0;
+  }
+}
+
+/* Efeito de hover para interatividade */
+.hero:hover {
+  transform: translateY(-3px);
+  transition: transform 0.3s ease;
+}
+
+/* Adicione um ícone de tag de preço */
+.hero h2::before {
+  content: "🏷️";
+  margin-right: 10px;
+}
+
