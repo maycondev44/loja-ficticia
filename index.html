@@ -2,29 +2,97 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Meta viewport corrigido para prevenir zoom indesejado -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Loja Fictícia</title>
   <link rel="stylesheet" href="style.css" />
   <style>
+    /* RESET MOBILE */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    /* HEADER RESPONSIVO */
+    header {
+      background: #007bff;
+      color: white;
+      padding: 1rem;
+      position: relative;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      display: block;
+    }
+    
+    /* CONTEÚDO PRINCIPAL */
+    main {
+      padding: 1rem;
+    }
+    
+    /* PRODUTOS - GRID RESPONSIVA */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    
+    .grid article {
+      border: 1px solid #ddd;
+      padding: 1rem;
+      border-radius: 5px;
+      text-align: center;
+    }
+    
+    .grid img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    
+    /* TABELA CARRINHO MOBILE */
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 15px;
+      font-size: 14px;
     }
+    
     th, td {
       border: 1px solid #ddd;
       padding: 8px;
       text-align: center;
     }
+    
     th {
       background-color: #007bff;
       color: white;
     }
+    
     input[type="number"] {
-      width: 60px;
+      width: 50px;
       padding: 4px;
       text-align: center;
     }
+    
     #finalizar-compra {
       background-color: #28a745;
       font-weight: bold;
@@ -36,14 +104,71 @@
       color: white;
       margin-top: 10px;
     }
+    
     #finalizar-compra:disabled {
       background-color: #ccc;
+    }
+    
+    /* MEDIA QUERIES PARA MOBILE */
+    @media (max-width: 768px) {
+      /* MENU COMPACTO */
+      nav ul {
+        flex-direction: column;
+        display: none;
+      }
+      
+      nav ul.active {
+        display: flex;
+      }
+      
+      .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+      
+      /* TABELA CARRINHO */
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+      
+      /* AJUSTE DE FONTE */
+      h1, h2 {
+        font-size: 1.5rem;
+      }
+    }
+    
+    /* ESTILOS EXISTENTES PRESERVADOS */
+    .hero {
+      text-align: center;
+      padding: 2rem 0;
+      background: #f8f9fa;
+      margin-bottom: 1rem;
+    }
+    
+    .contato {
+      padding: 1rem;
+      text-align: center;
+      background: #f8f9fa;
+      margin-top: 1rem;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #343a40;
+      color: white;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Loja Fictícia</h1>
+    <div class="menu-toggle">☰</div>
     <nav>
       <ul>
         <li><a href="#inicio">Início</a></li>
@@ -68,18 +193,20 @@
 
     <section id="carrinho">
       <h2>Seu Carrinho</h2>
-      <table id="tabela-carrinho">
-        <thead>
-          <tr>
-            <th>Produto</th>
-            <th>Preço</th>
-            <th>Quantidade</th>
-            <th>Subtotal</th>
-            <th>Remover</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
+      <div style="overflow-x: auto;">
+        <table id="tabela-carrinho">
+          <thead>
+            <tr>
+              <th>Produto</th>
+              <th>Preço</th>
+              <th>Quantidade</th>
+              <th>Subtotal</th>
+              <th>Remover</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
       <div id="total-carrinho" style="text-align: right; font-weight: bold; font-size: 18px;">Total: R$ 0,00</div>
       <button id="finalizar-compra" disabled>Finalizar Compra</button>
     </section>
@@ -96,6 +223,24 @@
   </footer>
 
   <script>
+    // Adicione este código ao seu JS existente
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('nav ul').classList.toggle('active');
+    });
+
+    // Previne zoom em inputs no mobile
+    document.addEventListener('gesturestart', function(e) {
+      e.preventDefault();
+    });
+
+    // Detecta elementos vazando da tela
+    window.addEventListener('load', function() {
+      if (document.documentElement.scrollWidth > window.innerWidth) {
+        console.warn('Ajuste necessário: Elementos estão vazando da tela');
+      }
+    });
+
+    // SEU CÓDIGO JS EXISTENTE (mantido igual)
     const produtos = [
       { id: 1, nome: "HeadSet Gamer Hyperx Cloud Alpha", preco: 810.00, imagem: "https://m.media-amazon.com/images/I/51TOPwdGwOL._AC_UF350,350_QL50_.jpg" },
       { id: 2, nome: "Lâmpada Inteligente Positivo Hue", preco: 3149.10, imagem: "https://positivocasainteligente.vteximg.com.br/arquivos/ids/156931-400-400/SmartLampadaSpot_caixa.png?v=638035941105400000" },
@@ -117,7 +262,7 @@
       produtos.forEach(prod => {
         const artigo = document.createElement("article");
         artigo.innerHTML = `
-          <img src="${prod.imagem}" alt="${prod.nome}" />
+          <img src="${prod.imagem}" alt="${prod.nome}" loading="lazy" />
           <h3>${prod.nome}</h3>
           <p>${formatarPreco(prod.preco)}</p>
           <button onclick="adicionarAoCarrinho(${prod.id})">Adicionar ao Carrinho</button>
